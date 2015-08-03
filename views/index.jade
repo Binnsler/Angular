@@ -1,0 +1,30 @@
+doctype html
+html(lang='en', ng-app="App")
+	head
+		meta(charset="utf-8")
+		title Angular
+
+	body(ng-cloak)
+		
+
+		#app-container(ng-controller="foodController")
+			h1(title) {{bestFood}}
+			
+			input(placeholder="New best food", ng-model="bestFood", ng-keyup="lookAtFood(bestFood)")
+
+			//- h1 This is the worst food: {{worstFood}}
+
+			//- h1 {{foodService.message}}
+
+			//- ng-repeat allows you to iterate over an array/object
+			.food-item(ng-repeat="food in foods") 
+				h3 {{food.name}}
+				h6 {{food.price}}
+
+			food
+
+
+		
+
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js")
+	script(src="main.js")
